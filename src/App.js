@@ -1,14 +1,14 @@
 import React from "react";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-// import Result from "./pages/Result";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route exact path="/" element={<Home />} />
-        {/* <Route exact path="/result" element={<Result />} /> */}
+        <Route exact path="/projects" element={<Projects />} />
       </Routes>
       {/* <Home /> */}
     </div>

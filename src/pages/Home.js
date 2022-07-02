@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../index.css'
 import { Box, Container } from '@mui/system'
 import { Typography, Button, TextField } from '@mui/material'
@@ -6,22 +6,17 @@ import { Typography, Button, TextField } from '@mui/material'
 // import ToggleButton from '@mui/material/ToggleButton';
 // import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Login from '../components/Login'
+import Signup from '../components/Signup'
 
 const Home = () => {
 
-    // const [alignment, setAlignment] = React.useState('web');
-
-    // const handleChange = (event, newAlignment) => {
-    //     setAlignment(newAlignment);
-    // };
-    // const 
+    const [isUser, setIsUser] = useState(true);
 
     return (
         <div>
             <Container
                 sx={{
                     height: '100vh',
-                    // width: '200vw',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -38,52 +33,69 @@ const Home = () => {
                         borderRadius: '65px',
                         width: '570px',
                         height: '644px',
-                        // left: '758px',
-                        // top: '128px'
                     }}
                 >
                     <Box
                         style={{
                             marginTop: '4rem',
-                            marginLeft: '4rem'
+                            marginLeft: '4rem',
+                            marginBottom: '0',
                         }}
                     >
                         <Button
                             style={{
-                                color: '#1A3B58'
+                                color: !isUser ? 'rgba(26, 59, 88, 0.33)' : 'black',
                             }}
                             size='large'
-                        >Log In</Button>
+                            onClick={() => setIsUser(true)}
+                        >
+                            Log In
+                        </Button>
+                        {/* <hr
+                                style={{
+                                    width: '2rem',
+                                    // display: 'inline',
+                                    marginBottom: '2rem',
+                                    marginLeft: '0',
+                                    marginTop: '0',
+                                    border: '2px solid rgba(64, 145, 223, 0.12)'
+                                }}
+                            /> */}
                         <Button
                             style={{
-                                color: '#1A3B58'
+                                color: isUser ? 'rgba(26, 59, 88, 0.33)' : 'black',
                             }}
                             size='large'
+                            onClick={() => setIsUser(false)}
                         >Sign Up</Button>
                     </Box>
-                    <Box
-                    style={{
-                        marginLeft: '6rem',
-                        marginTop: '3rem'
-                    }}
-                    >
-                        <Login />
-                    </Box>
-                    {/* <ToggleButtonGroup
-                        // color="primary"
-                        value={alignment}
-                        // exclusive
-                        onChange={handleChange}
+                    <div
                         style={{
-                            marginTop: '4rem',
-                            marginLeft: '4rem',
+                            width: '2rem',
+                            height: '0px',
+                            marginLeft: isUser ? '6rem' : '11rem',
+                            // top: 255px;
+                            border: '1px solid #1A3B58'
+                        }}
+                    ></div>
+                    <Box
+                        style={{
+                            marginLeft: '6rem',
+                            marginTop: '2rem',
+                            // backgroundColor: 'red'
                         }}
                     >
-                        <ToggleButton value="login">login</ToggleButton>
-                        <ToggleButton value="signup">signup</ToggleButton>
-                    </ToggleButtonGroup> */}
-                    {/* <Typography>Log In</Typography>
-                    <Typography>Sign up</Typography> */}
+                        <hr
+                            style={{
+                                width: '80%',
+                                marginBottom: '2rem',
+                                marginLeft: '0',
+                                marginTop: '0',
+                                border: '2px solid rgba(64, 145, 223, 0.12)'
+                            }}
+                        />
+                        {isUser ? <Login /> : <Signup />}
+                    </Box>
                 </Box>
             </Container>
         </div>
