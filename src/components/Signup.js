@@ -1,19 +1,54 @@
 import { Button } from '@mui/material'
-import {React, useState} from 'react'
+import { React, useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Box, } from '@mui/system'
+import { useDispatch } from 'react-redux';
+import { login } from '../features/userSlice'
 
 const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [inavlid, setInvalid] = useState(false)
+
+    const dispatch = useDispatch();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(login({
+            name,
+            email,
+            password,
+            loggedIn: true
+        }))
+    }
+    const handleChange = (e) => {
+        setEmail(e.target.value)
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if (re.test(email)) {
+            // this is a valid email address
+            // call setState({email: email}) to update the email
+            // or update the data in redux store.
+            setInvalid(false);
+        }
+        else {
+            // invalid email, maybe show an error to the user.
+            setInvalid(true);
+        }
+
+    }
+
+    // useEffect(() => {
+    // }, [email])
+
 
     return (
         <div>
             <Box component="form" noValidate
+                onSubmit={e => handleSubmit(e)}
             >
                 <TextField
                     style={{
@@ -32,7 +67,7 @@ const Signup = () => {
                 <TextField
                     style={{
                         marginTop: '2rem',
-                        width: '80%'
+                        width: '80%',
                     }}
                     required
                     fullWidth
@@ -40,9 +75,11 @@ const Signup = () => {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    helperText={inavlid && "Please Enter a valid Email"}
                     value={email}
-                    onChange={e => setEmail(e.target.value)}
-
+                    // onChange={e => (setEmail(e.target.value))}
+                    color={inavlid ? 'warning' : null}
+                    onChange={e => handleChange(e)}
                 />
                 <TextField
                     style={{

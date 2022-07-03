@@ -4,9 +4,12 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
-import DragDrop from '../components/DragDrop'
+// import DragDrop from '../components/DragDrop'
+import { selectUser } from '../features/userSlice';
+import { useSelector } from 'react-redux';
 
 const Projects = () => {
+  const user = useSelector(selectUser);
   return (
     <div
       style={{
@@ -39,7 +42,7 @@ const Projects = () => {
         >
           <SearchBar />
           <Stack direction="row" spacing={2}>
-            <Typography style={{ paddingTop: '8%' }}>Hii Priyank</Typography>
+            <Typography style={{ paddingTop: '8%' }}>Hii {user.name}</Typography>
             <Avatar alt="Remy Sharp" src="/img/avatar.png" />
           </Stack>
         </Grid>

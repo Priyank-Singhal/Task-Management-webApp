@@ -8,12 +8,23 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-// import { Button, TextField } from '@mui/material'
+import { Button} from '@mui/material'
 import { Link } from '@mui/material';
+import { useDispatch } from 'react-redux/';
+import { logout, selectUser } from '../features/userSlice';
+import { useSelector } from 'react-redux';
 
 const SideBar = () => {
     const icons = [<HomeOutlinedIcon />, <LeaderboardRoundedIcon />, <FolderCopyOutlinedIcon />, <ChatOutlinedIcon />, <CalendarMonthOutlinedIcon />]
     const pages = ['Overview', 'Stats', 'Projects', 'Chat', 'Calender']
+
+    const user = useSelector(selectUser);
+
+    const dispatch = useDispatch();
+    const handleLogout = (e) => {
+        // e.
+        dispatch(logout());
+    }
 
     return (
         <div>
@@ -81,7 +92,11 @@ const SideBar = () => {
                         </Grid>
                         <Grid style={{ display: 'flex', color: '#9A9A9A', }}>
                             <LogoutOutlinedIcon style={{ padding: '1rem' }} />
-                            <Typography style={{ padding: '1rem', letterSpacing: '0.15em' }}>Log Out</Typography>
+                            <Button
+                                style={{ padding: '1rem', textTransform: 'none', letterSpacing: '0.15em' }}
+                                color='inherit'
+                                onClick={e => handleLogout(e)}
+                            >Log Out</Button>
                         </Grid>
                     </Box>
                 </Box>
