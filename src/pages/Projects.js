@@ -1,8 +1,10 @@
-import { Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import SideBar from '../components/SideBar'
-
+import SearchBar from '../components/SearchBar'
+import {Avatar, Stack} from '@mui/material';
+import DragDrop from '../components/DragDrop'
 
 const Projects = () => {
   return (
@@ -16,15 +18,33 @@ const Projects = () => {
         style={{
           width: '17%',
           // backgroundColor: '#E5E5E5'
+          borderRight: '1px solid rgba(26, 59, 88, 0.24)',
         }}
       >
-       <SideBar />
+        <SideBar />
       </Box>
       <Box
         style={{
           width: '83%',
+          paddingTop: '3rem',
+          paddingLeft: '4rem',
+          paddingRight: '5rem'
         }}
       >
+        <Grid
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between'
+          }}
+        >
+          <SearchBar />
+          <Stack direction="row" spacing={2}>
+          <Typography style={{paddingTop: '8%'}}>Hii Priyank</Typography>
+          <Avatar alt="Remy Sharp" src="/img/avatar.png" />
+          </Stack>
+        </Grid>
+        <Typography>Projects</Typography>
+        {/* <DragDrop /> */}
       </Box>
     </div>
   )
