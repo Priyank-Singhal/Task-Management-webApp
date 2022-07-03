@@ -3,7 +3,7 @@ import { Box } from '@mui/system'
 import React from 'react'
 import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
-import {Avatar, Stack} from '@mui/material';
+import { Avatar, Stack } from '@mui/material';
 import DragDrop from '../components/DragDrop'
 
 const Projects = () => {
@@ -39,11 +39,17 @@ const Projects = () => {
         >
           <SearchBar />
           <Stack direction="row" spacing={2}>
-          <Typography style={{paddingTop: '8%'}}>Hii Priyank</Typography>
-          <Avatar alt="Remy Sharp" src="/img/avatar.png" />
+            <Typography style={{ paddingTop: '8%' }}>Hii Priyank</Typography>
+            <Avatar alt="Remy Sharp" src="/img/avatar.png" />
           </Stack>
         </Grid>
-        <Typography>Projects</Typography>
+        <Grid
+        sx={{
+          mt: 8
+        }}
+        >
+          <Typography style={{letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold'}} variant='h5'>Projects</Typography>
+        </Grid>
         {/* <DragDrop /> */}
       </Box>
     </div>

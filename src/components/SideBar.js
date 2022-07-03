@@ -63,8 +63,6 @@ const SideBar = () => {
                                                 height: '2rem',
                                                 // width: '2px',
                                                 marginTop: '0.5rem',
-                                                // top: 255px;
-                                                // border: '1px solid #1A3B58',
                                                 border: '2px solid #329C89',
                                                 borderRadius: '8px',
                                                 // backgroundColor: '#1A3B58',

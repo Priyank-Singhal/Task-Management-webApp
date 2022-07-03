@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import '../index.css'
 import { Box, Container } from '@mui/system'
-import { Typography, Button, TextField } from '@mui/material'
+import { Button } from '@mui/material'
 // import { useNavigate } from 'react-router-dom'
 // import ToggleButton from '@mui/material/ToggleButton';
 // import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -39,7 +38,7 @@ const Home = () => {
                         style={{
                             marginTop: '4rem',
                             marginLeft: '4rem',
-                            marginBottom: '0',
+                            // marginBottom: '0',
                         }}
                     >
                         <Button
@@ -51,16 +50,6 @@ const Home = () => {
                         >
                             Log In
                         </Button>
-                        {/* <hr
-                                style={{
-                                    width: '2rem',
-                                    // display: 'inline',
-                                    marginBottom: '2rem',
-                                    marginLeft: '0',
-                                    marginTop: '0',
-                                    border: '2px solid rgba(64, 145, 223, 0.12)'
-                                }}
-                            /> */}
                         <Button
                             style={{
                                 color: isUser ? 'rgba(26, 59, 88, 0.33)' : 'black',

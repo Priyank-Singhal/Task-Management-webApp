@@ -1,13 +1,17 @@
 import { Typography, Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 // import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Box, Container } from '@mui/system'
+import { Box, } from '@mui/system'
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+
     return (
         <div>
             <Typography variant='h5'>
@@ -17,8 +21,8 @@ const Login = () => {
                 We need your name and Email
             </Typography>
             <Box component="form" noValidate
-                // onSubmit={handleSubmit} 
-                >
+            // onSubmit={handleSubmit} 
+            >
                 <TextField
                     style={{
                         marginTop: '2rem',
@@ -30,6 +34,8 @@ const Login = () => {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                 />
                 <TextField
                     style={{
@@ -43,7 +49,8 @@ const Login = () => {
                     type="password"
                     id="password"
                     autoComplete="new-password"
-                // onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                 />
                 <Button
                     style={{
@@ -65,7 +72,6 @@ const Login = () => {
                 style={{
                     marginTop: '2rem',
                     width: '80%',
-                    // backgroundColor: '#329C89',
                 }}
             >
                 <FormControlLabel control={<Checkbox />} label="Remember Me" />
