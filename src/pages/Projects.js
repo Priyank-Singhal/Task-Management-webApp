@@ -4,7 +4,6 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
-// import DragDrop from '../components/DragDrop'
 import { useAuth } from '../contexts/AuthContext'
 import FilterListIcon from '@mui/icons-material/FilterList';
 import '../index.css'
@@ -24,7 +23,6 @@ const Projects = () => {
       <Box
         style={{
           width: '17%',
-          // backgroundColor: '#E5E5E5'
           borderRight: '1px solid rgba(26, 59, 88, 0.24)',
         }}
       >
@@ -75,7 +73,6 @@ const Projects = () => {
           </Grid>
           <DragDrop />
         </Grid>
-        {/* <DragDrop /> */}
       </Box>
     </div>
   )

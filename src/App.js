@@ -10,7 +10,6 @@ function App() {
     <div>
       <AuthProvider>
         <Routes>
-          {/* <PrivateRoute exact path="/overview" element={<Projects />} /> */}
           <Route exact path='/Overview' element={<PrivateRoute/>}>
             <Route exact path='/Overview' element={<Projects/>}/>
           </Route>
@@ -28,7 +27,6 @@ function App() {
           </Route>
           <Route exact path="/" element={<Home />} />
         </Routes>
-        {/* <Home /> */}
       </AuthProvider>
     </div>
   );

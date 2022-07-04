@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Container } from '@mui/system'
 import { Button } from '@mui/material'
-// import { useNavigate } from 'react-router-dom'
-// import ToggleButton from '@mui/material/ToggleButton';
-// import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Login from '../components/Login'
 import Signup from '../components/Signup'
 
@@ -38,7 +35,6 @@ const Home = () => {
                         style={{
                             marginTop: '4rem',
                             marginLeft: '4rem',
-                            // marginBottom: '0',
                         }}
                     >
                         <Button
@@ -63,7 +59,6 @@ const Home = () => {
                             width: '2rem',
                             height: '0px',
                             marginLeft: isUser ? '6rem' : '11rem',
-                            // top: 255px;
                             border: '1px solid #1A3B58'
                         }}
                     ></div>
@@ -71,7 +66,6 @@ const Home = () => {
                         style={{
                             marginLeft: '6rem',
                             marginTop: '2rem',
-                            // backgroundColor: 'red'
                         }}
                     >
                         <hr
@@ -83,7 +77,6 @@ const Home = () => {
                                 border: '2px solid rgba(64, 145, 223, 0.12)'
                             }}
                         />
-                        {/* <Signup /> */}
                         {isUser ? <Login /> : <Signup />}
                     </Box>
                 </Box>
