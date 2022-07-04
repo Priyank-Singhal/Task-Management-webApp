@@ -7,6 +7,7 @@ import Checkbox from '@mui/material/Checkbox';
 // import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, } from '@mui/system'
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
     const {login} = useAuth();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -25,6 +27,7 @@ const Login = () => {
         try{
             setLoading(true)
             await login(email, password)
+            navigate('/Projects')
         } catch {
             console.log("Failed to Login")
 

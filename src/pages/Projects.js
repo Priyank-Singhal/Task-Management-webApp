@@ -4,7 +4,7 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
-import DragDrop from '../components/DragDrop'
+// import DragDrop from '../components/DragDrop'
 
 const Projects = () => {
   return (

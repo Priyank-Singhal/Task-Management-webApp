@@ -6,6 +6,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { Box, } from '@mui/system';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -14,6 +16,7 @@ const Signup = () => {
     const {signup} = useAuth();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -24,6 +27,7 @@ const Signup = () => {
         try{
             setLoading(true)
             await signup(email, password)
+            navigate('/Projects')
         } catch {
             console.log("Failed to create an account")
 
