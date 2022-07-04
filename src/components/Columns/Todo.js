@@ -1,5 +1,6 @@
 import { Box, Button, Input, Grid, TextField, Typography } from '@mui/material'
 import { React, useState, useRef } from 'react'
+import DeleteIcon from '@mui/icons-material/Delete'
 
 const Todo = () => {
     const dragItem = useRef();
@@ -43,7 +44,8 @@ const Todo = () => {
     }
 
 
-    const deleteNote = (id) => {
+    const deleteNote = (e, id) => {
+        e.preventDefault();
         setNotes(prevNotes => {
             return prevNotes.filter((noteItem, index) => {
                 return index !== id;
@@ -170,14 +172,10 @@ const Todo = () => {
                             >
                                 {noteItem.content}
                             </Typography>
+                            <Button onClick={e => deleteNote(e, index)} sx={{alignSelf:'flex-end', color: '#6B6B6B'}}>
+                                <DeleteIcon />
+                            </Button>
                         </Box>
-                        // <Note
-                        //     key={index}
-                        //     id={index}
-                        //     title={noteItem.title}
-                        //     content={noteItem.content}
-                        //     onDelete={deleteNote}
-                        // />
 
                     );
                 })}
