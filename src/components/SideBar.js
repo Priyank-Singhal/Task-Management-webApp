@@ -8,12 +8,25 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-// import { Button, TextField } from '@mui/material'
+import { Button } from '@mui/material'
 import { Link } from '@mui/material';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
     const icons = [<HomeOutlinedIcon />, <LeaderboardRoundedIcon />, <FolderCopyOutlinedIcon />, <ChatOutlinedIcon />, <CalendarMonthOutlinedIcon />]
     const pages = ['Overview', 'Stats', 'Projects', 'Chat', 'Calender']
+    const {logout} = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try{
+            await logout();
+            navigate('/');
+        } catch {
+            console.log("failed to logout")
+        }
+    }
 
     return (
         <div>
@@ -81,7 +94,7 @@ const SideBar = () => {
                         </Grid>
                         <Grid style={{ display: 'flex', color: '#9A9A9A', }}>
                             <LogoutOutlinedIcon style={{ padding: '1rem' }} />
-                            <Typography style={{ padding: '1rem', letterSpacing: '0.15em' }}>Log Out</Typography>
+                            <Button onClick={handleLogout} style={{ padding: '1rem', letterSpacing: '0.15em' }} color='inherit'>Log Out</Button>
                         </Grid>
                     </Box>
                 </Box>
