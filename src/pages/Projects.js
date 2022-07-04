@@ -6,9 +6,12 @@ import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
 // import DragDrop from '../components/DragDrop'
 import { useAuth } from '../contexts/AuthContext'
+import Todo from '../components/Columns/Todo'
+import Progress from '../components/Columns/Progress'
+import Completed from '../components/Columns/Completed'
 
 const Projects = () => {
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div
@@ -31,7 +34,7 @@ const Projects = () => {
           width: '83%',
           paddingTop: '3rem',
           paddingLeft: '4rem',
-          paddingRight: '5rem'
+          paddingRight: '7rem'
         }}
       >
         <Grid
@@ -47,11 +50,22 @@ const Projects = () => {
           </Stack>
         </Grid>
         <Grid
-        sx={{
-          mt: 8
-        }}
+          sx={{
+            mt: 8
+          }}
         >
-          <Typography style={{letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold'}} variant='h5'>Projects</Typography>
+          <Typography style={{ letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold' }} variant='h5'>Projects</Typography>
+          <Grid sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '1.5rem'
+          }}>
+            <Todo />
+            <Todo />
+            <Todo />
+            {/* <Progress />
+            <Completed /> */}
+          </Grid>
         </Grid>
         {/* <DragDrop /> */}
       </Box>
