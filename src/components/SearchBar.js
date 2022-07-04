@@ -20,11 +20,9 @@ const Search = () => {
                 <InputBase placeholder='Search'
                     sx={{ 
                         marginLeft: '1rem',
-                        // marginTop: '0.5rem',
                         letterSpacing: '0.12em',
                         fontSize: '1.2rem'
                      }}
-                // onKeyDown={handleKeyPress}
                 />
             </div>
         </div>

@@ -26,7 +26,7 @@ const Signup = () => {
             navigate('/Projects')
         } catch {
             console.log("Failed to create an account")
-            
+            setError(true)
         }
         setLoading(false)
     }
@@ -78,6 +78,8 @@ const Signup = () => {
                     type="password"
                     id="password"
                     autoComplete="new-password"
+                    error={error}
+                    helperText={ error &&  "Invalid Email or Password Format"}
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />

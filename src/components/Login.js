@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-// import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, } from '@mui/system'
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';

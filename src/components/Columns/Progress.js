@@ -87,9 +87,6 @@ const Progress = () => {
                     display: 'flex',
                     flexDirection: 'column'
                 }}
-                // droppable
-                // onDragOver={e => draggingOver(e)}
-                // onDrop={e => dragDropped(e)}
             >
                 <Grid sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Typography>Progress</Typography>
