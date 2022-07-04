@@ -83,7 +83,8 @@ const Home = () => {
                                 border: '2px solid rgba(64, 145, 223, 0.12)'
                             }}
                         />
-                        {isUser ? <Login /> : <Signup />}
+                        <Signup />
+                        {/* {isUser ? <Login /> : <Signup />} */}
                     </Box>
                 </Box>
             </Container>

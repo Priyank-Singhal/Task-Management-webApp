@@ -6,10 +6,31 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 // import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Box, } from '@mui/system'
+import { useAuth } from '../contexts/AuthContext';
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const {login} = useAuth();
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(!password) {
+            alert("Wrong Password")
+            return;
+        }
+        try{
+            setLoading(true)
+            await login(email, password)
+        } catch {
+            console.log("Failed to Login")
+
+        }
+        setLoading(false)
+    }
 
 
     return (
@@ -21,7 +42,7 @@ const Login = () => {
                 We need your name and Email
             </Typography>
             <Box component="form" noValidate
-            // onSubmit={handleSubmit} 
+            onSubmit={e => handleSubmit(e)} 
             >
                 <TextField
                     style={{

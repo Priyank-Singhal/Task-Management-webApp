@@ -4,16 +4,37 @@ import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { Box, } from '@mui/system'
+import { Box, } from '@mui/system';
+import { useAuth } from '../contexts/AuthContext';
 
 const Signup = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const {signup} = useAuth();
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(!password) {
+            alert("Wrong Password")
+            return;
+        }
+        try{
+            setLoading(true)
+            await signup(email, password)
+        } catch {
+            console.log("Failed to create an account")
+
+        }
+        setLoading(false)
+    }
 
     return (
         <div>
             <Box component="form" noValidate
+            onSubmit={e => handleSubmit(e)} 
             >
                 <TextField
                     style={{
@@ -41,6 +62,7 @@ const Signup = () => {
                     name="email"
                     autoComplete="email"
                     value={email}
+                    error={error}
                     onChange={e => setEmail(e.target.value)}
 
                 />
@@ -71,6 +93,7 @@ const Signup = () => {
                     type="submit"
                     fullWidth
                     variant="contained"
+                    disabled={loading}
                 >
                     Sign Up
                 </Button>
