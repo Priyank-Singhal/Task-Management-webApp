@@ -5,8 +5,11 @@ import SideBar from '../components/SideBar'
 import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
 // import DragDrop from '../components/DragDrop'
+import { useAuth } from '../contexts/AuthContext'
 
 const Projects = () => {
+  const {currentUser} = useAuth();
+
   return (
     <div
       style={{
@@ -39,7 +42,7 @@ const Projects = () => {
         >
           <SearchBar />
           <Stack direction="row" spacing={2}>
-            <Typography style={{ paddingTop: '8%' }}>Hii Priyank</Typography>
+            <Typography style={{ paddingTop: '8%' }}>Hii {currentUser.email}</Typography>
             <Avatar alt="Remy Sharp" src="/img/avatar.png" />
           </Stack>
         </Grid>

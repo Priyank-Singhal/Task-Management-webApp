@@ -11,13 +11,21 @@ function App() {
       <AuthProvider>
         <Routes>
           {/* <PrivateRoute exact path="/overview" element={<Projects />} /> */}
+          <Route exact path='/Overview' element={<PrivateRoute/>}>
+            <Route exact path='/Overview' element={<Projects/>}/>
+          </Route>
+          <Route exact path='/Stats' element={<PrivateRoute/>}>
+            <Route exact path='/Stats' element={<Projects/>}/>
+          </Route>
           <Route exact path='/Projects' element={<PrivateRoute/>}>
             <Route exact path='/Projects' element={<Projects/>}/>
           </Route>
-          {/* <PrivateRoute exact path="/stats" element={<Projects />} />
-          <PrivateRoute exact path="/projects" element={<Projects />} />
-          <PrivateRoute exact path="/chat" element={<Projects />} />
-          <PrivateRoute exact path="/calender" element={<Projects />} /> */}
+          <Route exact path='/Chat' element={<PrivateRoute/>}>
+            <Route exact path='/Chat' element={<Projects/>}/>
+          </Route>
+          <Route exact path='/Calender' element={<PrivateRoute/>}>
+            <Route exact path='/Calender' element={<Projects/>}/>
+          </Route>
           <Route exact path="/" element={<Home />} />
         </Routes>
         {/* <Home /> */}
