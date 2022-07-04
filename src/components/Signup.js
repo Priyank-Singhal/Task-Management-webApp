@@ -20,17 +20,13 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if(!password) {
-            alert("Wrong Password")
-            return;
-        }
         try{
             setLoading(true)
             await signup(email, password)
             navigate('/Projects')
         } catch {
             console.log("Failed to create an account")
-
+            
         }
         setLoading(false)
     }

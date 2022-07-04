@@ -1,7 +1,9 @@
 import { Box, Button, Input, Grid, TextField, Typography } from '@mui/material'
-import { React, useState } from 'react'
+import { React, useState, useRef } from 'react'
 
 const Completed = () => {
+    const dragItem = useRef();
+    const dragOverItem = useRef();
     const [notes, setNotes] = useState([]);
     const [note, setNote] = useState({
         title: "",
@@ -51,7 +53,24 @@ const Completed = () => {
 
     const dragStarted = (e, ind) => {
         console.log("Drag Started")
-        e.dataTransfer.setData("todoId", ind); 
+        e.dataTransfer.setData("todoId", ind);
+        dragItem.current = ind;
+        console.log(e.target.innerHTML)
+    }
+    const draggingOver = (e, ind) => {
+        console.log("Dragging over now")
+        dragOverItem.current = ind;
+        console.log(e.target.innerHTML);
+    }
+    const dragDropped = (e, ind) => {
+        console.log("Dropped")
+        const copyListItems = [...notes];
+        const dragItemContent = copyListItems[dragItem.current];
+        copyListItems.splice(dragItem.current, 1);
+        copyListItems.splice(dragOverItem.current, 0, dragItemContent);
+        dragItem.current = null;
+        dragOverItem.current = null;
+        setNotes(copyListItems);
     }
 
     return (
@@ -133,8 +152,11 @@ const Completed = () => {
                             flexDirection: 'column'
                         }}
                             draggable
-                            onDragStart = {e => dragStarted(e, index)}
-                            key = {index}
+                            onDragStart={e => dragStarted(e, index)}
+                            droppable
+                            onDragEnter={e => draggingOver(e, index)}
+                            onDragEnd={e => dragDropped(e, index)}
+                            key={index}
                         >
                             <Typography
                                 variant='h6'

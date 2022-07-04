@@ -7,7 +7,7 @@ const Progress = () => {
     const [notes, setNotes] = useState([]);
     const [note, setNote] = useState({
         title: "",
-        content: ""
+        content: "" 
     });
     const [write, setWrite] = useState(false);
 
