@@ -19,7 +19,8 @@ function App() {
         <Route exact path="/chat" element={<Projects />} />
         <Route exact path="/calender" element={<Projects />} />
       </Routes> */}
-      {user ? <Projects /> : <Home /> }
+      {/* {user ? <Projects /> : <Home /> } */}
+      <Projects />
       
     </div>
   );

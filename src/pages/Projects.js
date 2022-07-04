@@ -42,7 +42,7 @@ const Projects = () => {
         >
           <SearchBar />
           <Stack direction="row" spacing={2}>
-            <Typography style={{ paddingTop: '8%' }}>Hii {user.name}</Typography>
+            <Typography style={{ paddingTop: '8%' }}>Hii {user && user.name}</Typography>
             <Avatar alt="Remy Sharp" src="/img/avatar.png" />
           </Stack>
         </Grid>
