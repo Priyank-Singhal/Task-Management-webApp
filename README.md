@@ -1,4 +1,4 @@
- Clone the repo and install all the dependencies.\
+ Clone the repo and install all the dependencies.
 ## npm install
 Run the project using 
 ## npm start
