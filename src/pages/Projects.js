@@ -6,9 +6,13 @@ import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
 // import DragDrop from '../components/DragDrop'
 import { useAuth } from '../contexts/AuthContext'
+import FilterListIcon from '@mui/icons-material/FilterList';
+import '../index.css'
+import DragDrop from '../components/Columns/DragDrop'
+
 
 const Projects = () => {
-  const {currentUser} = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div
@@ -31,7 +35,7 @@ const Projects = () => {
           width: '83%',
           paddingTop: '3rem',
           paddingLeft: '4rem',
-          paddingRight: '5rem'
+          paddingRight: '7rem'
         }}
       >
         <Grid
@@ -41,17 +45,35 @@ const Projects = () => {
           }}
         >
           <SearchBar />
+          <img src='img/grp_icon.svg' />
           <Stack direction="row" spacing={2}>
             <Typography style={{ paddingTop: '8%' }}>Hii {currentUser.email}</Typography>
             <Avatar alt="Remy Sharp" src="/img/avatar.png" />
           </Stack>
         </Grid>
         <Grid
-        sx={{
-          mt: 8
-        }}
+          sx={{
+            mt: 6
+          }}
         >
-          <Typography style={{letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold'}} variant='h5'>Projects</Typography>
+          <Grid
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Typography style={{ letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold' }} variant='h5'>Projects</Typography>
+            <Grid
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
+            >
+              <FilterListIcon sx={{ mt: 0.5, mr: 2 }} />
+              <Typography style={{ letterSpacing: '0.07em', color: '# 3A3A3A' }} variant='h6'>Filter</Typography>
+            </Grid>
+          </Grid>
+          <DragDrop />
         </Grid>
         {/* <DragDrop /> */}
       </Box>

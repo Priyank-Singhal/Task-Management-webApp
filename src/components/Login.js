@@ -30,7 +30,7 @@ const Login = () => {
             navigate('/Projects')
         } catch {
             console.log("Failed to Login")
-
+            setError(true)
         }
         setLoading(false)
     }
@@ -58,6 +58,7 @@ const Login = () => {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    error={error}
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
@@ -73,6 +74,8 @@ const Login = () => {
                     type="password"
                     id="password"
                     autoComplete="new-password"
+                    error={error}
+                    helperText={ error &&  "Invalid Email or Password"}
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
