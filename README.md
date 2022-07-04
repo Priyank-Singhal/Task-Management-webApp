@@ -1,70 +1,21 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Clone the repo and install all the dependencies.
+## npm install
+Run the project using 
+## npm start
+SignUp on the webApp\
+![image](https://user-images.githubusercontent.com/88102721/177208893-8d7e5e52-228b-45a9-9882-c3a9623a72d0.png)
+This will redirect you to the main page of the app\
+If you're already a user, login to the webapp using valid credentials
+![image](https://user-images.githubusercontent.com/88102721/177209043-9c9a69ae-6396-4f95-b848-73c5f9abe6c2.png)
+If the credentials do not match with the registered mail, the app will throw an error
+![image](https://user-images.githubusercontent.com/88102721/177209119-82d02e37-4b2d-4f8b-828f-df3f41a2f7f5.png)
+After successful Login, you'll be redirected to the Project section of the webapp
+![image](https://user-images.githubusercontent.com/88102721/177209361-e189d22f-1a8d-47bb-a235-b37eb77d5e93.png)\
+The user can add Tasks in any of the above sections: Todo, Progress, Completed\
+![image](https://user-images.githubusercontent.com/88102721/177211178-fe809759-127c-425d-8749-fd6d58ceb2e4.png)\
+![image](https://user-images.githubusercontent.com/88102721/177211199-3309a7f0-b5b8-4740-afd1-4a050eae20ba.png)\
+The tasks can be shuffled internally within sections.\
+The tasks can be deleted using the delete button on the button right corner of the task card.\
+![image](https://user-images.githubusercontent.com/88102721/177211425-ee133993-3d08-4bf0-8684-fe01eef4c2e3.png)\
+The user can logout of the web-app using the logout button\
+![image](https://user-images.githubusercontent.com/88102721/177211474-bd8c1888-bcd4-4392-b9cb-567a62a279c2.png)
