@@ -6,9 +6,10 @@ import SearchBar from '../components/SearchBar'
 import { Avatar, Stack } from '@mui/material';
 // import DragDrop from '../components/DragDrop'
 import { useAuth } from '../contexts/AuthContext'
-import Todo from '../components/Columns/Todo'
-import Progress from '../components/Columns/Progress'
-import Completed from '../components/Columns/Completed'
+import FilterListIcon from '@mui/icons-material/FilterList';
+import '../index.css'
+import DragDrop from '../components/Columns/DragDrop'
+
 
 const Projects = () => {
   const { currentUser } = useAuth();
@@ -44,6 +45,7 @@ const Projects = () => {
           }}
         >
           <SearchBar />
+          <img src='img/grp_icon.svg' />
           <Stack direction="row" spacing={2}>
             <Typography style={{ paddingTop: '8%' }}>Hii {currentUser.email}</Typography>
             <Avatar alt="Remy Sharp" src="/img/avatar.png" />
@@ -51,21 +53,27 @@ const Projects = () => {
         </Grid>
         <Grid
           sx={{
-            mt: 8
+            mt: 6
           }}
         >
-          <Typography style={{ letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold' }} variant='h5'>Projects</Typography>
-          <Grid sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '1.5rem'
-          }}>
-            <Todo />
-            <Todo />
-            <Todo />
-            {/* <Progress />
-            <Completed /> */}
+          <Grid
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Typography style={{ letterSpacing: '0.09em', color: '#212121', fontWeight: 'bold' }} variant='h5'>Projects</Typography>
+            <Grid
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
+            >
+              <FilterListIcon sx={{ mt: 0.5, mr: 2 }} />
+              <Typography style={{ letterSpacing: '0.07em', color: '# 3A3A3A' }} variant='h6'>Filter</Typography>
+            </Grid>
           </Grid>
+          <DragDrop />
         </Grid>
         {/* <DragDrop /> */}
       </Box>
